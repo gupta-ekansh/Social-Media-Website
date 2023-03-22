@@ -1,4 +1,4 @@
-import { API_URLS , LOCALSTORAGE_TOKEN_KEY } from "./constants";
+// import { API_URLS , LOCALSTORAGE_TOKEN_KEY } from "./constants";
 export * from './constants';
 
 export const setItemInLocalStorage = (value , key) => {
@@ -8,21 +8,21 @@ export const setItemInLocalStorage = (value , key) => {
 
     const valueToStore = typeof value !== "string" ? JSON.stringify(value) : value;
 
-    localStorage.setItem(key , valueToStore);
+    return localStorage.setItem(key , valueToStore);
 }
 
 export const getItemInLocalStorage = (key) => {
     if(!key){
         return console.error('cannot get the value from LS');
     }
-    localStorage.getItem(key);
+    return localStorage.getItem(key);
 }
 
 export const removeItemInLocalStorage = (key) => {
     if(!key){
         return console.error('cannot remove the value from LS');
     }
-    localStorage.removeItem(key);
+    return localStorage.removeItem(key);
 }
 
 export const getFormBody = (params)  => {
